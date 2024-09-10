@@ -1,14 +1,5 @@
-# 1st program
-print((9**0.5)*5)
-# 2nd program
-print(9.99 > 9.98 and 1000 != 1000.1)
-# 3rd program
-print(2*2+2)
-print(2*(2+2))
-print((2*2+2) == (2*(2+2)))
-# 4th program
-print("123.456")
-print("123.456")
-print(float("123.456"))
-print((float("123.456"))*10)
-print(int(((float("123.456"))*10)%10))
+# 10/09/2024 Практическое задание по теме "Переменные".
+Finish_DZ="12"
+Hours_spent="1.5"
+Course_name="Python"
+print("Курс:", Course_name+",", "всего задач:"+ Finish_DZ+",", "затрачено часов:", Hours_spent+",", "среднее время выполнения", float(Hours_spent)/float(Finish_DZ), "часа.")
