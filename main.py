@@ -1,5 +1,10 @@
-# 10/09/2024 Практическое задание по теме "Переменные".
-Finish_DZ="12"
-Hours_spent="1.5"
-Course_name="Python"
-print("Курс:", Course_name+",", "всего задач:"+ Finish_DZ+",", "затрачено часов:", Hours_spent+",", "среднее время выполнения", float(Hours_spent)/float(Finish_DZ), "часа.")
+# 11.09.2024 Динамическая типизация.
+# module_1_3.py
+name="Vladimir"
+print("Name:", name)
+age=33
+print("Age:", age)
+new_age=age+1
+print("New age:", new_age)
+is_student=True
+print("Is Student:", is_student)
