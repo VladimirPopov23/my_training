@@ -1,10 +1,9 @@
-# 11.09.2024 Динамическая типизация.
-# module_1_3.py
-name="Vladimir"
-print("Name:", name)
-age=33
-print("Age:", age)
-new_age=age+1
-print("New age:", new_age)
-is_student=True
-print("Is Student:", is_student)
+# module_1_4.py
+# 12/09/2024 Практическое задание по теме "Организация программ и методы строк".
+my_string=input("Введите фразу: ")
+print(len(my_string))
+print(my_string .upper())
+print(my_string .lower())
+print(my_string .replace(" ", ""))
+print(my_string [0])
+print(my_string [-1])
