@@ -1,15 +1,15 @@
-# module_1_5.py
-# 15.09.2024 Неизменяемые и изменяемые объекты. Кортежи и списки
-immutable_var=([9], 1, True, "string", 1.5)
-print(immutable_var)
-immutable_var[0][0]=5
-print("Immutable var:", immutable_var)
-# immutable_var[1][1]=5
-# Изменить неизменные элементы в кортеже нельзя, т.к объект не поддерживает данную функцию.
-mutable_list=[1, 2, "a", "b"]
-mutable_list[0]="one"
-mutable_list[1]="two"
-mutable_list[2]="A"
-mutable_list[3]="B"
-mutable_list.append("Modified")
-print("Mutable list:", mutable_list)
+# module_1_6.py
+# 15.09.2024 Словари и множества.
+my_dict = {"Vladimir" : 1990, "Nastya" : 1992, "Bonaparte" : 1812}
+print("Dict:", my_dict)
+print("Existing value:", my_dict["Vladimir"])
+print("Not existing value:", my_dict.get("Napoleon"))
+my_dict.update({"Gogol" : 1809, "Tolstoy" : 1828})
+print("Deleted value:", my_dict.pop("Bonaparte"))
+print("Modified dictionary:", my_dict)
+my_set={"W", "W", "W", "Leningrad", "SPB", ".ru"}
+print("Set:", my_set)
+my_set.add("Vincent van Gogh")
+my_set.add(7)
+my_set.remove(".ru")
+print("Modified set:", my_set)
