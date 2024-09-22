@@ -1,13 +1,22 @@
-# module_2_3.py
-# 21.09.2024 Нули ничто, отрицание недопустимо!
-# 22.09.2024 Без использования ф-ции .remove(0)
-my_list = [42, 69, 322, 13, 0, 99, -5, 9, 8, 7, -6, 5]
-a = 0
-while a < len(my_list):
-    if my_list[a] == 0:
-        a = a + 1
+# module_2_4.py
+# 22.09.2024 Задача "Всё не так уж просто"
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+primes = []
+not_primes = []
+for n in numbers:
+    is_prime = True
+    if n == 1:
         continue
-    elif my_list[a] < 0:
-        break
-    print(my_list[a])
-    a = a + 1
+    elif n > 1:
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                is_prime = False
+                break
+    else:
+        is_prime = False
+    if is_prime:
+        primes.append(n)
+    else:
+        not_primes.append(n)
+print("Primes: ", primes)
+print("Not Primes: ", not_primes)
