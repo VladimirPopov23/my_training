@@ -1,15 +1,39 @@
-# module_2_5.py
-# 23.09.2024 Задача "Матрица воплоти"
-def get_matrix(n, m, value):
-    matrix = []
-    for i in range(n):
-        matrix.append([])
-        for j in range(m):
-            matrix[i].append(value)
-    return matrix
-result1 = get_matrix(2, 2, 10)
-result2 = get_matrix(3, 5, 42)
-result3 = get_matrix(4, 2, 13)
-print(result1)
-print(result2)
-print(result3)
+# module_2_hard.py
+# 24.09.2024 Задание "Слишком древний шифр"
+
+
+import random
+
+
+def stone_1():  # первое поле
+    n = list(range(3, 21))
+    numbers = random.choice(n)
+    return numbers
+
+
+def code():
+    set_ = {}  # пароли для чисел
+    set_.update({3: 12, 4: 13, 5: 1423, 6: 121524, 7: 162534, 8: 13172635, 9: 1218273645, 10: 141923283746, 11: 11029384756,
+         12: 12131511124210394857, 13: 112211310495867, 14: 1611325212343114105968, 15: 1214114232133124115106978,
+         16: 1317115262143531341251161079, 17: 11621531441351261171089, 18: 12151811724272163631545414513612711810,
+         19: 118217316415514613712811910, 20: 13141911923282183731746416515614713812911})
+    return code
+
+
+n = stone_1()
+print("Число из первой вставки:", n)
+pair_number_1 = list(range(1, n))
+pair_number_2 = list(range(1, n))
+pairs = []
+result = ""
+for i in pair_number_1:
+    for j in pair_number_2:
+        if i >= j:
+            continue
+        else:
+            stone_2 = n % (i + j)  # второе поле "нужно написать пары чисел друг за другом, чтобы число из первой вставки было кратно (делилось без остатка) сумме их значений"
+            if stone_2 == 0:
+                pairs.append([i, j])
+                result = result + str(i) + str(j)
+print("Пары чисел", *pairs)
+print("Пароль", result)
