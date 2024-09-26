@@ -1,39 +1,36 @@
-# module_2_hard.py
-# 24.09.2024 Задание "Слишком древний шифр"
+# module_3_1.py
+# 26.09.2024 Задача "Счётчик вызовов"
+
+calls = 0
 
 
-import random
+def count_calls():
+    global calls
+    calls += 1
 
 
-def stone_1():  # первое поле
-    n = list(range(3, 21))
-    numbers = random.choice(n)
-    return numbers
+def string_info(line):
+    argument = str(line)
+    result = (len(argument), argument.upper(), argument.lower())
+    count_calls()
+    return result
 
 
-def code():
-    set_ = {}  # пароли для чисел
-    set_.update({3: 12, 4: 13, 5: 1423, 6: 121524, 7: 162534, 8: 13172635, 9: 1218273645, 10: 141923283746, 11: 11029384756,
-         12: 12131511124210394857, 13: 112211310495867, 14: 1611325212343114105968, 15: 1214114232133124115106978,
-         16: 1317115262143531341251161079, 17: 11621531441351261171089, 18: 12151811724272163631545414513612711810,
-         19: 118217316415514613712811910, 20: 13141911923282183731746416515614713812911})
-    return code
-
-
-n = stone_1()
-print("Число из первой вставки:", n)
-pair_number_1 = list(range(1, n))
-pair_number_2 = list(range(1, n))
-pairs = []
-result = ""
-for i in pair_number_1:
-    for j in pair_number_2:
-        if i >= j:
-            continue
+def is_contains(line, list_):
+    line = str(line).lower()
+    count_calls()
+    for i in range(len(list_)):
+        if str(list_[i]).lower() == line:
+            result = True
+            break
         else:
-            stone_2 = n % (i + j)  # второе поле "нужно написать пары чисел друг за другом, чтобы число из первой вставки было кратно (делилось без остатка) сумме их значений"
-            if stone_2 == 0:
-                pairs.append([i, j])
-                result = result + str(i) + str(j)
-print("Пары чисел", *pairs)
-print("Пароль", result)
+            result = False
+            continue
+    return result
+
+
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))  # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic']))  # No matches
+print(calls)
