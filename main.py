@@ -1,36 +1,29 @@
-# module_3_1.py
-# 26.09.2024 Задача "Счётчик вызовов"
+# module_3_2.py
+# 28.09.2024 Задача "Рассылка писем"
 
-calls = 0
-
-
-def count_calls():
-    global calls
-    calls += 1
-
-
-def string_info(line):
-    argument = str(line)
-    result = (len(argument), argument.upper(), argument.lower())
-    count_calls()
-    return result
-
-
-def is_contains(line, list_):
-    line = str(line).lower()
-    count_calls()
-    for i in range(len(list_)):
-        if str(list_[i]).lower() == line:
-            result = True
-            break
+def send_email(message, recipient, *, sender="university.help@gmail.com"):
+    x = (".com", ".ru", ".net")
+    index = recipient.find("@") and sender.find("@")
+    if int(index) > 0:
+        index = True
+    else:
+        index = False
+    for n in recipient and sender:
+        if recipient.endswith(x) and sender.endswith(x):
+            n = True
         else:
-            result = False
-            continue
-    return result
+            n = False
+    if sender == "university.help@gmail.com" and index == True and n == True:
+        print("Письмо успешно отправлено с адреса", sender, "на адрес", recipient)
+    if sender != "university.help@gmail.com" and recipient != sender and index == True and n == True:
+        print("НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса", sender, "на адрес", recipient)
+    if index == False or n == False:
+        print("Невозможно отправить письмо с адреса", sender, "на адрес", recipient)
+    if recipient == sender:
+        print("Нельзя отправить письмо самому себе!")
 
 
-print(string_info('Capybara'))
-print(string_info('Armageddon'))
-print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))  # Urban ~ urBAN
-print(is_contains('cycle', ['recycling', 'cyclic']))  # No matches
-print(calls)
+send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
+send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
+send_email('Пожалуйста, исправьте задание', 'urban.student@mail.ru', sender='urban.teacher@mail.uk')
+send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', sender='urban.teacher@mail.ru')
