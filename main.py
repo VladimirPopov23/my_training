@@ -1,10 +1,11 @@
 # module_3_2.py
-# 28.09.2024 Задача "Рассылка писем"
+# 29.09.2024 Задача "Рассылка писем" (устранение замечаний)
 
 def send_email(message, recipient, *, sender="university.help@gmail.com"):
     x = (".com", ".ru", ".net")
-    index = recipient.find("@") and sender.find("@")
-    if int(index) > 0:
+    index_r = recipient.find("@")
+    index_s = sender.find("@")
+    if int(index_r) > 0 and int(index_s):
         index = True
     else:
         index = False
