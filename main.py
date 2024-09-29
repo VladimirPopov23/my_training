@@ -5,7 +5,7 @@ def send_email(message, recipient, *, sender="university.help@gmail.com"):
     x = (".com", ".ru", ".net")
     index_r = recipient.find("@")
     index_s = sender.find("@")
-    if int(index_r) > 0 and int(index_s):
+    if int(index_r) > 0 and int(index_s) > 0:
         index = True
     else:
         index = False
