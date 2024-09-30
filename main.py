@@ -1,21 +1,14 @@
-# module_3_3.py
-# 29.09.2024 Задача "Распаковка"
+# module_3_5.py
+# 30.09.2024 "Рекурсивное умножение цифр"
 
-def print_params(a = 1, b = 'строка', c = True):
-    print(a, b, c)
+def get_multiplied_digits(number):
+    str_number = str(number)
+    first = int(str_number[0])
+    if len(str_number) > 1:
+        return first * get_multiplied_digits(int(str_number[1:]))
+    else:
+        return first
 
-# 1. Функция с параметрами по умолчанию:
-print_params()
-print_params(b = 25)
-print_params(c = [1, 2, 3])
 
-# 2.Распаковка параметров:
-values_list = [9, 'Max', False]
-values_dict = {'a':5, 'b':'list', 'c':False}
-print_params(*values_list)
-print_params(**values_dict)
-
-# 3.Распаковка + отдельные параметры:
-values_list_2 = [3.14, 'mail']
-print_params(*values_list_2, 42)
-
+result = get_multiplied_digits(40203)
+print(result)
