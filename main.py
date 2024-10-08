@@ -1,28 +1,14 @@
-# module_3_hard.py
-# 06.10.2024 Задание "Раз, два, три, четыре, пять .... Это не всё?"
+# module_4_1.py
+# 08.10.2024 Задача "А как делить?"
 
+from fake_math import divide as f_m
+from true_math import divide as t_m
 
-def calculate_structure_sum(data_structure):
-    sum_ = 0
-    for i in data_structure:
-        if isinstance(i, (list, tuple, set)):
-            sum_ += calculate_structure_sum(i)
-        if isinstance(i, dict):
-            sum_ += calculate_structure_sum(i.items())
-        if isinstance(i, (int, float)):
-            sum_ += i
-        if isinstance(i, str):
-            sum_ += len(i)
-    return sum_
-
-
-data_structure = [
-    [1, 2, 3],
-    {'a': 4, 'b': 5},
-    (6, {'cube': 7, 'drum': 8}),
-    "Hello",
-    ((), [{(2, 'Urban', ('Urban2', 35))}])
-]
-
-result = calculate_structure_sum(data_structure)
-print(result)
+result1 = f_m(69, 3)
+result2 = f_m(3, 0)
+result3 = t_m(49, 7)
+result4 = t_m(15, 0)
+print(result1)
+print(result2)
+print(result3)
+print(result4)
