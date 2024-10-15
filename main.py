@@ -1,14 +1,13 @@
-# module_4_1.py
-# 08.10.2024 Задача "А как делить?"
+# module_4_2.py
+# 15.10.2024 Домашнее задание по уроку "Пространство имен"
 
-from fake_math import divide as f_m
-from true_math import divide as t_m
+def test_function():
+    def inner_function():
+        print("Я в области видимости функции test_function")
 
-result1 = f_m(69, 3)
-result2 = f_m(3, 0)
-result3 = t_m(49, 7)
-result4 = t_m(15, 0)
-print(result1)
-print(result2)
-print(result3)
-print(result4)
+    inner_function()
+
+
+test_function()
+# inner_function()
+# вызов функции inner_function вне test_function приводит к ошибке, т.к. функция не может быть вызвана за пределами объемлющей области видимости.
